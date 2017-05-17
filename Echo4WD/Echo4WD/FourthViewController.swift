@@ -17,7 +17,22 @@ class FourthViewController: UIViewController, CLLocationManagerDelegate {
 
     let manager = CLLocationManager()
     
+    @IBOutlet weak var btnHome: UIButton!
+    @IBOutlet weak var btnMaps: UIButton!
+    @IBOutlet weak var btnParty: UIButton!
+    @IBOutlet weak var btnSettings: UIButton!
+    @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var btnLog: UIButton!
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     @IBAction func btnLog(_ sender: Any) {
         performSegue(withIdentifier: "segue11" , sender: self)
