@@ -13,8 +13,45 @@ import CoreLocation
 class FourthViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var map: MKMapView!
+   
 
     let manager = CLLocationManager()
+    
+    @IBOutlet weak var btnLog: UIButton!
+    
+    @IBAction func btnLog(_ sender: Any) {
+        performSegue(withIdentifier: "segue11" , sender: self)
+    }
+   
+    
+    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    
+    var menuShowing = false
+    
+    @IBAction func openMenu(_ sender: Any) {
+        
+       
+        
+        if (menuShowing) {
+            leadingConstraint.constant = -250
+            UIView.animate(withDuration: 0.3, animations: {
+                
+                self.view.layoutIfNeeded() })
+        } else {
+            leadingConstraint.constant = 0
+            UIView.animate(withDuration: 0.3, animations: {
+            
+                self.view.layoutIfNeeded() })
+        }
+        
+        menuShowing = !menuShowing
+        
+    }
+    
+    
+    
+    
+    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
