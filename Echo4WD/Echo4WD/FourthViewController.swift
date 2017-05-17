@@ -26,6 +26,24 @@ class FourthViewController: UIViewController, CLLocationManagerDelegate {
     
     
     
+    //Closes the popup window and hides it, through animation
+    
+    @IBAction func btnHome(_ sender: Any) {
+        if (menuShowing) {
+            leadingConstraint.constant = -250
+            UIView.animate(withDuration: 0.3, animations: {
+                
+                self.view.layoutIfNeeded() })
+        } else {
+            leadingConstraint.constant = 0
+            UIView.animate(withDuration: 0.3, animations: {
+                
+                self.view.layoutIfNeeded() })
+        }
+        
+        menuShowing = !menuShowing
+    }
+    
     
     
     
@@ -42,6 +60,9 @@ class FourthViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     
     var menuShowing = false
+    
+    
+    //Same as Home Button, opens and closes the menu on the side of the page
     
     @IBAction func openMenu(_ sender: Any) {
         
@@ -65,7 +86,7 @@ class FourthViewController: UIViewController, CLLocationManagerDelegate {
     
     
     
-    
+    //The Setup for the Maps, displays the users location, showing the surround roads/locations around them
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -85,7 +106,7 @@ class FourthViewController: UIViewController, CLLocationManagerDelegate {
     
     
     
-    
+    //Setup for the Location Services
     
     override func viewDidLoad()
     {

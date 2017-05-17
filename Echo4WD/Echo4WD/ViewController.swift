@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnCreate: UIButton!
     
     
+    //Takes the User to the next screen
+    
     @IBAction func btnLog(_ sender: Any) {
         performSegue(withIdentifier: "segue" , sender: self)
     }

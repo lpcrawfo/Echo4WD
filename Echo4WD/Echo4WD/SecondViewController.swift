@@ -14,6 +14,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var btnCreate: UIButton!
     @IBOutlet weak var btnForgot: UIButton!
  
+    //Allows the user to navigate the Application
     
     @IBAction func btnLog(_ sender: Any) {
         performSegue(withIdentifier: "Segue" , sender: self)

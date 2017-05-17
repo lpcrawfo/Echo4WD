@@ -14,6 +14,9 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var btnCreate: UIButton!
     @IBOutlet weak var btnBack: UIButton!
     
+    
+    //Allows the user to navigate
+    
     @IBAction func btnCreate(_ sender: Any) {
         performSegue(withIdentifier: "segueCreate" , sender: self)
     }
